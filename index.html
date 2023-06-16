@@ -1,23 +1,11 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>我的博客</title>
-        <link rel="stylesheet" type="text/css" href="styles.css">
-        <script src="script.js"></script>
-    </head>
-    <body>
-        <header>
-            <h1>欢迎来到我的博客</h1>
-        </header>
-        <main>
-            <section>
-                <h2>文章标题</h2>
-                <p>文章内容...</p>
-<!--                <button id="myButton">点击我</button>-->
-            </section>
-        </main>
-        <footer>
-            <p>© 2023 我的博客</p>
-        </footer>
-    </body>
-</html>
+---
+layout: default
+---
+<ul>
+    {% for post in site.posts %}
+        <li>
+            <a href="{{ post.url }}">{{ post.title }}</a>
+            <small>{{ post.date }}</small>
+        </li>
+    {% endfor %}
+</ul>
